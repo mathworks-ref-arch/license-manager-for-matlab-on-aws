@@ -1,0 +1,25 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": "s3:*",
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "cloudformation:*",
+            "Resource": "*"
+        },
+        {
+            "Action": "ec2:*",
+            "Effect": "Allow",
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": "autoscaling:*",
+            "Resource": "*"
+        }
+    ]
+}

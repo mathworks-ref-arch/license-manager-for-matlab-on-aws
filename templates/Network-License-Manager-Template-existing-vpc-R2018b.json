@@ -1,0 +1,235 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Mappings": {
+    "Constants": {
+      "InstanceValues": {
+        "InstanceAmi": "ami-00f609b1821288ba8",
+        "BootScriptLocation": "https://s3.amazonaws.com/network-license-manager-for-matlab-on-aws"
+      }
+    }
+  },
+  "Resources": {
+    "SecurityGroup" : {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "VpcId": {"Ref": "VPC"},
+        "GroupDescription": "Allow remote access for SSH",
+        "SecurityGroupIngress": [
+          {
+            "IpProtocol": "tcp",
+            "FromPort": "22",
+            "ToPort": "22",
+            "CidrIp": {"Ref": "ClientIPAddress"}
+          },
+          {
+            "IpProtocol": "tcp",
+            "FromPort": "443",
+            "ToPort": "443",
+            "CidrIp": {"Ref": "ClientIPAddress"}
+          },
+          {
+            "IpProtocol": "tcp",
+            "FromPort": "27000",
+            "ToPort": "27001",
+            "CidrIp": {"Ref": "VPCIP"}
+          }
+        ]
+      }
+    },
+    "SecurityGroupInternalTrafficRule": {
+      "Type": "AWS::EC2::SecurityGroupIngress",
+      "DependsOn": "SecurityGroup",
+      "Properties": {
+        "GroupId": {"Ref": "SecurityGroup"},
+        "IpProtocol": "tcp",
+        "FromPort": "1",
+        "ToPort": "65535",
+        "SourceSecurityGroupId": {"Ref": "SecurityGroup"}
+      }
+    },
+    "Server": {
+      "Type": "AWS::EC2::Instance",
+      "Properties": {
+        "InstanceType": {"Ref": "ServerInstanceType"},
+        "SubnetId": {"Ref": "PublicSubnet"},
+        "SecurityGroupIds": [{"Ref": "SecurityGroup"}],
+        "KeyName": {"Ref": "SSHKeyName"},
+        "ImageId": {"Fn::FindInMap": ["Constants", "InstanceValues", "InstanceAmi"]},
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "Network License Manager for MATLAB"
+          }
+        ],
+        "UserData": {
+          "Fn::Base64": {
+            "Fn::Join": [
+              "",
+              [
+                "#!/bin/bash\n",
+                "# Copyright 2011-2018 The MathWorks, Inc.\n",
+                "function curlWithRetry {\n",
+                "    NUM_ATTEMPTS=3\n",
+                "    RETRY_DELAY=1\n",
+                "    # The --fail flag for curl prevents errors being printed on the output.\n",
+                "    # This allows us to determine from empty output that something has gone\n",
+                "    # wrong rather than having to attempt to parse the output from curl.\n",
+                "    for ATTEMPT in $(seq $NUM_ATTEMPTS)\n",
+                "    do\n",
+                "        ATTEMPT_COUNTER=$ATTEMPT\n",
+                "        OUTPUT=$(curl --fail --silent $1)\n",
+                "        if [ -n \"$OUTPUT\" ]; then\n",
+                "            echo \"$OUTPUT\"\n",
+                "            return 0\n",
+                "        else\n",
+                "            sleep $RETRY_DELAY\n",
+                "        fi\n",
+                "    done\n",
+                "    return 1\n",
+                "}\n",
+                "sudo useradd -m -p `echo ",
+                {"Ref": "Password" },
+                " | mkpasswd --method=sha-512 -s` ",
+                {"Ref": "Username"},
+                "\n",
+                "bash <(curlWithRetry ", {"Fn::FindInMap": ["Constants", "InstanceValues", "BootScriptLocation"]}, "/boot-license-manager.sh) 2>&1 > /var/log/mathworks.log\n"
+              ]
+            ]
+          }
+        }
+      }
+    },
+    "ServerEIP": {
+      "Type": "AWS::EC2::EIP",
+      "Properties": {
+        "InstanceId": {"Ref": "Server"},
+        "Domain": "vpc"
+      }
+    }
+  },
+  "Parameters": {
+    "VPC": {
+      "Description": "ID of an existing VPC in which to deploy this stack",
+      "Type": "AWS::EC2::VPC::Id"
+    },
+    "PublicSubnet": {
+      "Description": "ID of an existing subnet for the head node and workers",
+      "Type": "AWS::EC2::Subnet::Id"
+    },
+    "VPCIP": {
+      "Description": "CIDR IP address range of the VPC to allow other MathWorks products deployed in this VPC to access this Network License Manager. This must be a valid IP CIDR range of the form x.x.x.x/x",
+      "Type": "String",
+      "MinLength": "9",
+      "MaxLength": "18",
+      "AllowedPattern": "(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})/(\\d{1,2})",
+      "ConstraintDescription": "Must be a valid IP CIDR range of the form x.x.x.x/x."
+    },
+    "ServerInstanceType": {
+      "Description": "Amazon instance type, see https://aws.amazon.com/ec2/instance-types/",
+      "Default": "t2.micro",
+      "Type": "String",
+      "MinLength": 1,
+      "ConstraintDescription": "The instance type must be specified"
+    },
+    "SSHKeyName": {
+      "Description": "Name of an existing EC2 KeyPair to enable SSH access to the instance. If you do not have a KeyPair see the AWS documentation on how to create one.",
+      "Type": "AWS::EC2::KeyPair::KeyName",
+      "ConstraintDescription": "Must be the name of an existing EC2 KeyPair."
+    },
+    "ClientIPAddress": {
+      "Description": "The IP address range that can be used access the server via ssh. This must be a valid IP CIDR range of the form x.x.x.x/x. Use the value <your_public_ip_address>/32 to restrict access to only your computer.",
+      "Type": "String",
+      "MinLength": "9",
+      "MaxLength": "18",
+      "AllowedPattern": "(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})/(\\d{1,2})",
+      "ConstraintDescription": "Must be a valid IP CIDR range of the form x.x.x.x/x."
+    },
+    "Username": {
+      "Description": "Username to access instance",
+      "Type": "String",
+      "ConstraintDescription": "Must be a valid user name",
+      "Default": ""
+    },
+    "Password": {
+      "NoEcho": "true",
+      "Description": "Password",
+      "Type": "String",
+      "ConstraintDescription": "",
+      "Default": ""
+    },
+    "ConfirmPassword": {
+      "NoEcho": "true",
+      "Description": "Confirm Password",
+      "Type": "String",
+      "ConstraintDescription": "",
+      "Default": ""
+    }
+  },
+  "Rules": {
+    "matchPasswords": {
+      "Assertions": [
+          {
+              "Assert": {"Fn::Equals":[{"Ref":"Password"},{"Ref":"ConfirmPassword"}]},
+              "AssertDescription": "Passwords do not match"
+          }
+      ]
+    }
+  },
+  "Outputs": {
+    "ServerIP": {
+      "Description": "Public IP address of the Network License Manager",
+      "Value": {"Ref": "ServerEIP"}
+    },
+    "ServerAddress": {
+      "Description": "Address of the Network License Manager for MATLAB Dashboard",
+      "Value": {"Fn::Join": ["", ["https://", {
+        "Fn::GetAtt": [
+          "Server",
+          "PublicDnsName"
+        ]
+      }]]}
+    },
+    "ServerPrivateDNS": {
+      "Description": "Private DNSName of the Network License Manager",
+      "Value": {
+        "Fn::GetAtt": [
+          "Server",
+          "PrivateDnsName"
+        ]
+      }
+    },
+    "SecurityGroup": {
+        "Description": "The security group to use for access to the Network License Manager",
+        "Value": {"Ref": "SecurityGroup"}
+    }
+  },
+  "Metadata": {
+    "AWS::CloudFormation::Interface": {
+      "ParameterGroups": [
+        {
+          "Label": {"default": "Amazon EC2 Configuration"},
+          "Parameters": ["ServerInstanceType"]
+        },
+        {
+          "Label": {"default": "Remote Access"},
+          "Parameters": ["ClientIPAddress", "SSHKeyName", "Username", "Password", "ConfirmPassword"]
+        },
+        {
+          "Label": {"default": "Network Configuration"},
+          "Parameters": ["VPC", "PublicSubnet", "VPCIP"]
+        }
+      ],
+      "ParameterLabels": {
+        "ServerInstanceType": {"default": "Instance type for the Network License Manager"},
+        "ClientIPAddress": {"default": "CIDR IP address range of client"},
+        "SSHKeyName": {"default": "Name of SSH key"},
+        "Username": {"default": "Username"},
+        "Password": {"default": "Password"},
+        "ConfirmPassword": {"default": "Confirm Password"},
+        "VPC": {"default": "VPC to deploy this stack to"},
+        "PublicSubnet": {"default": "Subnet for the license server"},
+        "VPCIP": {"default": "CIDR IP address range for the VPC"}
+      }
+    }
+  }
+}
