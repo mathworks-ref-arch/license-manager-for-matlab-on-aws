@@ -58,7 +58,7 @@
         "Tags": [
           {
             "Key": "Name",
-            "Value": "Network License Manager for MATLAB"
+            "Value": "Network license manager for MATLAB"
           }
         ],
         "UserData": {
@@ -117,7 +117,7 @@
       "Type": "AWS::EC2::Subnet::Id"
     },
     "VPCIP": {
-      "Description": "CIDR IP address range of the VPC to allow other MathWorks products deployed in this VPC to access this Network License Manager. This must be a valid IP CIDR range of the form x.x.x.x/x",
+      "Description": "CIDR IP address range of the VPC to allow other MathWorks products deployed in this VPC to access this network license manager. This must be a valid IP CIDR range of the form x.x.x.x/x",
       "Type": "String",
       "MinLength": "9",
       "MaxLength": "18",
@@ -177,11 +177,11 @@
   },
   "Outputs": {
     "ServerIP": {
-      "Description": "Public IP address of the Network License Manager",
+      "Description": "Public IP address of the network license manager",
       "Value": {"Ref": "ServerEIP"}
     },
     "ServerAddress": {
-      "Description": "Address of the Network License Manager for MATLAB Dashboard",
+      "Description": "Address of the network license manager for MATLAB dashboard",
       "Value": {"Fn::Join": ["", ["https://", {
         "Fn::GetAtt": [
           "Server",
@@ -190,7 +190,7 @@
       }]]}
     },
     "ServerPrivateDNS": {
-      "Description": "Private DNSName of the Network License Manager",
+      "Description": "Private DNSName of the network license manager",
       "Value": {
         "Fn::GetAtt": [
           "Server",
@@ -199,7 +199,7 @@
       }
     },
     "SecurityGroup": {
-        "Description": "The security group to use for access to the Network License Manager",
+        "Description": "The security group to use for access to the network license manager",
         "Value": {"Ref": "SecurityGroup"}
     }
   },
@@ -220,7 +220,7 @@
         }
       ],
       "ParameterLabels": {
-        "ServerInstanceType": {"default": "Instance type for the Network License Manager"},
+        "ServerInstanceType": {"default": "Instance type for the network license manager"},
         "ClientIPAddress": {"default": "CIDR IP address range of client"},
         "SSHKeyName": {"default": "Name of SSH key"},
         "Username": {"default": "Username"},

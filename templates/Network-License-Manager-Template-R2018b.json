@@ -226,11 +226,11 @@
       "Value": {"Ref": "PublicSubnet"}
     },
     "ServerIP": {
-      "Description": "Public IP address of the Network License Manager",
+      "Description": "Public IP address of the network license manager",
       "Value": {"Ref": "ServerEIP"}
     },
     "ServerAddress": {
-      "Description": "Address of the Network License Manager for MATLAB Dashboard",
+      "Description": "Address of the network license manager for MATLAB Dashboard",
       "Value": {"Fn::Join": ["", ["https://", {
         "Fn::GetAtt": [
           "Server",
@@ -239,7 +239,7 @@
       }]]}
     },
     "ServerPrivateDNS": {
-      "Description": "Private DNSName of the Network License Manager",
+      "Description": "Private DNSName of the network license manager",
       "Value": {
         "Fn::GetAtt": [
           "Server",
@@ -248,7 +248,7 @@
       }
     },
     "SecurityGroup": {
-        "Description": "The security group to use for access to the Network License Manager",
+        "Description": "The security group to use for access to the network license manager",
         "Value": {"Ref": "SecurityGroup"}
     }
   },
@@ -265,7 +265,7 @@
         }
       ],
       "ParameterLabels": {
-        "ServerInstanceType": {"default": "Instance type for the Network License Manager"},
+        "ServerInstanceType": {"default": "Instance type for the network license manager"},
         "ClientIPAddress": {"default": "CIDR IP address range of client"},
         "SSHKeyName": {"default": "Name of SSH key"},
         "Username": {"default": "Username"},

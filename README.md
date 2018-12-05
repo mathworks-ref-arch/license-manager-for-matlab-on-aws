@@ -12,7 +12,7 @@ Before starting, you will need the following:
 You are responsible for the cost of the AWS services used when you create cloud resources using this guide. Resource settings, such as instance type, will affect the cost of deployment. For cost estimates, see the pricing pages for each AWS service you will be using. Prices are subject to change.
 
 # Introduction
-The following guide will help you automate the process of launching a Network License Manager for MATLAB on Amazon EC2 resources in your AWS account. For information about the architecture of this solution, see [Learn About Network License Manager for MATLAB Architecture](#learn-about-network-license-manager-for-matlab-architecture).
+The following guide will help you automate the process of launching a network license manager for MATLAB on Amazon EC2 resources in your AWS account. For information about the architecture of this solution, see [Learn About Network License Manager for MATLAB Architecture](#learn-about-network-license-manager-for-matlab-architecture).
 
 # Deployment Steps
 
@@ -20,11 +20,11 @@ The following guide will help you automate the process of launching a Network Li
 
 Click the **Launch Stack** button below to deploy the cloud resources on AWS. This will open the AWS console in your web browser.
 
-[![alt text](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png "Start a Network License Manager for MATLAB using the template")](https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create/review?templateURL=https://s3.amazonaws.com/network-license-manager-for-matlab-on-aws/Network-License-Manager-Template-R2018b.json)
+[![alt text](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png "Start a network license manager for MATLAB using the template")](https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create/review?templateURL=https://s3.amazonaws.com/network-license-manager-for-matlab-on-aws/Network-License-Manager-Template-R2018b.json)
 
 > Platform: Ubuntu Xenial (16.04)
 
-> Network License Manager for MATLAB Release: R2018b
+> Network license manager for MATLAB Release: R2018b
 
 ## Step 2. Configure the Cloud Resources
 After you click the Launch Stack button above, the “Create stack” page will open in your browser where you can configure the parameters. It is easier to complete the steps if you position these instructions and the AWS console window side by side.
@@ -34,11 +34,11 @@ After you click the Launch Stack button above, the “Create stack” page will 
     | Parameter label                                    | Description 
     | -------------------------------------------------- | ----------- 
     | **Stack name**                                     | Choose a name for the stack. This will be shown in the AWS console.
-    | **Instance type for the Network License Manager**  | Choose the AWS instance type to use for the license sever. All [AWS instance types](https://aws.amazon.com/ec2/instance-types) are supported.
+    | **Instance type for the network license manager**  | Choose the AWS instance type to use for the license sever. All [AWS instance types](https://aws.amazon.com/ec2/instance-types) are supported.
     | **Name of SSH key**                                | Choose the name of an existing EC2 KeyPair to allow SSH access to the license server instance. If you do not have one, [follow the AWS instructions to create one.](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html)
     | **CIDR IP address range of client**                | This is the IP address range that will be allowed to connect to this instance using SSH. The format for this field is IP Address/Mask. <p><em>Example</em>: </p>10.0.0.1/32 <ul><li>This is the public IP address which can be found by searching for "what is my ip address" on the web. The mask determines the number of IP addresses to include.</li><li>A mask of 32 is a single IP address.</li><li>Use a [CIDR calculator](https://www.ipaddressguide.com/cidr) if you need a range of more than one IP addresses.</li><li>You may need to contact your IT administrator to determine which address is appropriate.</li></ul></p>
-    | **Username**					                     | Enter a username you would like to use to connect to the Network License Manager for MATLAB Dashboard.
-    | **Password**					                     | Enter a password you would like to use to connect to the Network License Manager for MATLAB Dashboard.
+    | **Username**					                     | Enter a username you would like to use to connect to the network license manager for MATLAB Dashboard.
+    | **Password**					                     | Enter a password you would like to use to connect to the network license manager for MATLAB Dashboard.
 	| **Confirm Password**			                     | Retype the password to confirm.
 
 2. Click the **Create** button.
@@ -49,7 +49,7 @@ When you click Create, the license server is created using AWS CloudFormation te
 > **Note**: The Internet Explorer web browser is not supported for interacting with the cloud console.
 
 1. In the Stack Detail for your stack, expand the **Outputs** section.
-2. Look for the key named `ServerAddress` and click the corresponding URL listed under value. This is the HTTPS endpoint to the Network License Manager for MATLAB Dashboard.
+2. Look for the key named `ServerAddress` and click the corresponding URL listed under value. This is the HTTPS endpoint to the network license manager for MATLAB Dashboard.
 
 # Step 4: Log in to the Dashboard
 
@@ -64,9 +64,9 @@ When you click Create, the license server is created using AWS CloudFormation te
 2. Click **Browse License File** to select the license file you want to upload and click **Open**.
 3. Click **Upload**.
 
-You are now ready to use the Network License Manager on AWS.
+You are now ready to use the network license manager on AWS.
 
-To configure your MATLAB products deployed in AWS to use the Network License Manager see the product documentation. An example for MATLAB Distributed Computing Server can be found at [MATLAB Distributed Computing Server on Amazon Web Services](https://github.com/mathworks-ref-arch/mdcs-on-aws).
+To configure your MATLAB products deployed in AWS to use the network license manager see the product documentation. An example for MATLAB Distributed Computing Server can be found at [MATLAB Distributed Computing Server on Amazon Web Services](https://github.com/mathworks-ref-arch/mdcs-on-aws).
 
 # Additional Information
 ## Delete Your Cloud Resources
@@ -95,7 +95,7 @@ If the stack created successfully but you are unable to access the dashboard che
 ## Use Existing VPC
 You can launch the reference architecture within an existing VPC and subnet using the Network-License-Manager-Template-existing-vpc.json template.
 
-[![alt text](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png "Start a Network License Manager using the template")](https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create/review?templateURL=https://s3.amazonaws.com/network-license-manager-for-matlab-on-aws/Network-License-Manager-Template-existing-vpc-R2018b.json)
+[![alt text](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png "Start a network license manager using the template")](https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create/review?templateURL=https://s3.amazonaws.com/network-license-manager-for-matlab-on-aws/Network-License-Manager-Template-existing-vpc-R2018b.json)
 
 > Cluster Platform: Ubuntu Xenial (16.04)
 
@@ -107,7 +107,7 @@ This template requires the following additional parameters:
 | --- | --- |
 | **VPC** (required) | The ID of an existing Virtual Private Cloud to deploy this stack in |
 | **Subnet** (required) | The ID of an existing subnet for the license server |
-| **CIDR IP address range for the VPC** (required) | Specify the IP address range for the VPC to allow other MathWorks products deployed in this VPC to access this Network License Manager. This must be a valid IP CIDR range of the form x.x.x.x/x. 
+| **CIDR IP address range for the VPC** (required) | Specify the IP address range for the VPC to allow other MathWorks products deployed in this VPC to access this network license manager. This must be a valid IP CIDR range of the form x.x.x.x/x. 
 
 ## Learn About Network License Manager for MATLAB Architecture
 
@@ -126,12 +126,12 @@ This template requires the following additional parameters:
 * Security Group (AWS::EC2::SecurityGroup): The security group defines the ports that are opened for ingress to the cluster:
   * 22: Required for SSH access to the cluster nodes.
   * 443: Required for HTTPS access to the dashboard.
-  * 27000-27001: Required for communication from MATLAB and MATLAB workers to the Network License Manager for MATLAB.
+  * 27000-27001: Required for communication from MATLAB and MATLAB workers to the network license manager for MATLAB.
 * Internal Security Group Traffic Rule (AWS::EC2::SecurityGroupIngress): Opens access to network traffic between all instances internally.
 * Elastic IP: An elastic IP is created so that the server can be restarted and keep the same IP and MAC address to ensure the license file downloaded from MathWorks remains valid.
 
 ### Instances
-* Network License Manager instance (AWS::EC2::Instance): An EC2 instance for the license server.
+* Network license manager instance (AWS::EC2::Instance): An EC2 instance for the license server.
 
 # Enhancement Request
 Provide suggestions for additional features or capabilities using the following link: [https://www.mathworks.com/cloud/enhancement-request.html](https://www.mathworks.com/cloud/enhancement-request.html)
