@@ -3,7 +3,7 @@
   "Mappings": {
     "Constants": {
       "InstanceValues": {
-        "InstanceAmi": "ami-00f609b1821288ba8",
+        "InstanceAmi": "ami-096dbaac9d49c9552",
         "BootScriptLocation": "https://s3.amazonaws.com/network-license-manager-for-matlab-on-aws"
       }
     }

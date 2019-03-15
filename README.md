@@ -14,6 +14,9 @@ You are responsible for the cost of the AWS services used when you create cloud 
 # Introduction
 The following guide will help you automate the process of launching a network license manager for MATLAB on Amazon EC2 resources in your AWS account. For information about the architecture of this solution, see [Learn About Network License Manager for MATLAB Architecture](#learn-about-network-license-manager-for-matlab-architecture).
 
+## Note
+If you experience problems when deploying a previously downloaded version of this reference architecture template, use the Launch Stack button below to deploy the latest version.
+
 # Deployment Steps
 
 ## Step 1. Launch the Template
@@ -31,8 +34,8 @@ After you click the Launch Stack button above, the “Create stack” page will 
 
 1. Specify and check the defaults for these resource parameters:
 
-    | Parameter label                                    | Description 
-    | -------------------------------------------------- | ----------- 
+    | Parameter label                                    | Description
+    | -------------------------------------------------- | -----------
     | **Stack name**                                     | Choose a name for the stack. This will be shown in the AWS console.
     | **Instance type for the network license manager**  | Choose the AWS instance type to use for the license sever. All [AWS instance types](https://aws.amazon.com/ec2/instance-types) are supported.
     | **Name of SSH key**                                | Choose the name of an existing EC2 KeyPair to allow SSH access to the license server instance. If you do not have one, [follow the AWS instructions to create one.](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html)
@@ -107,7 +110,7 @@ This template requires the following additional parameters:
 | --- | --- |
 | **VPC** (required) | The ID of an existing Virtual Private Cloud to deploy this stack in |
 | **Subnet** (required) | The ID of an existing subnet for the license server |
-| **CIDR IP address range for the VPC** (required) | Specify the IP address range for the VPC to allow other MathWorks products deployed in this VPC to access this network license manager. This must be a valid IP CIDR range of the form x.x.x.x/x. 
+| **CIDR IP address range for the VPC** (required) | Specify the IP address range for the VPC to allow other MathWorks products deployed in this VPC to access this network license manager. This must be a valid IP CIDR range of the form x.x.x.x/x.
 
 ## Learn About Network License Manager for MATLAB Architecture
 
@@ -138,4 +141,3 @@ Provide suggestions for additional features or capabilities using the following 
 
 # Technical Support
 Email: `cloud-support@mathworks.com`
-
