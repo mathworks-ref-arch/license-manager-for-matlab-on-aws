@@ -6,7 +6,7 @@ Before starting, you will need the following:
 
 - An Amazon Web Services™ (AWS) account with required permissions. To see what is required, look at the [example policy](/doc/example-iam-policy.json).
 
-- An SSH Key Pair for your AWS account in the US East (N. Virginia) region. Create an SSH key pair if you do not already have one. For instructions [see the AWS documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html).
+- An SSH Key Pair for your AWS account in your chosen region (see [Templates for All Supported MATLAB Versions and AWS Regions](#templates-for-all-supported-matlab-versions-and-aws-regions) for supported regions, examples use `us-east-1`). Create an SSH key pair if you do not already have one. For instructions [see the AWS documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html).
 
 # Costs
 You are responsible for the cost of the AWS services used when you create cloud resources using this guide. Resource settings, such as instance type, will affect the cost of deployment. For cost estimates, see the pricing pages for each AWS service you will be using. Prices are subject to change.
@@ -23,11 +23,15 @@ If you experience problems when deploying a previously downloaded version of thi
 
 Click the **Launch Stack** button below to deploy the cloud resources on AWS. This will open the AWS console in your web browser.
 
-[![alt text](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png "Start a network license manager for MATLAB using the template")](https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create/review?templateURL=https://s3.amazonaws.com/network-license-manager-for-matlab-on-aws/Network-License-Manager-Template-R2018b.json)
+[![alt text](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png "Start a network license manager for MATLAB using the template")](https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create/review?templateURL=https://s3.amazonaws.com/network-license-manager-for-matlab-on-aws/Network-License-Manager-Template-R2019a_us-east-1.json)
 
-> Platform: Ubuntu Xenial (16.04)
+> Platform: "Ubuntu 18.04 LTS"
 
-> Network license manager for MATLAB Release: R2018b
+> Network license manager for MATLAB Release: R2019a
+
+> Region: us-east-1
+
+For other releases or regions, see [Templates for All Supported MATLAB Versions and AWS Regions](#templates-for-all-supported-matlab-versions-and-aws-regions)
 
 ## Step 2. Configure the Cloud Resources
 After you click the Launch Stack button above, the “Create stack” page will open in your browser where you can configure the parameters. It is easier to complete the steps if you position these instructions and the AWS console window side by side.
@@ -69,7 +73,7 @@ When you click Create, the license server is created using AWS CloudFormation te
 
 You are now ready to use the network license manager on AWS.
 
-To configure your MATLAB products deployed in AWS to use the network license manager see the product documentation. An example for MATLAB Distributed Computing Server can be found at [MATLAB Distributed Computing Server on Amazon Web Services](https://github.com/mathworks-ref-arch/mdcs-on-aws).
+To configure your MATLAB products deployed in AWS to use the network license manager see the product documentation. An example for MATLAB Parallel Server can be found at [MATLAB Parallel Server on Amazon Web Services](https://github.com/mathworks-ref-arch/matlab-parallel-server-on-aws).
 
 # Additional Information
 ## Delete Your Cloud Resources
@@ -98,11 +102,15 @@ If the stack created successfully but you are unable to access the dashboard che
 ## Use Existing VPC
 You can launch the reference architecture within an existing VPC and subnet using the Network-License-Manager-Template-existing-vpc.json template.
 
-[![alt text](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png "Start a network license manager using the template")](https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create/review?templateURL=https://s3.amazonaws.com/network-license-manager-for-matlab-on-aws/Network-License-Manager-Template-existing-vpc-R2018b.json)
+[![alt text](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png "Start a network license manager using the template")](https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create/review?templateURL=https://s3.amazonaws.com/network-license-manager-for-matlab-on-aws/Network-License-Manager-Template-existing-vpc-R2019a_us-east-1.json)
 
-> Cluster Platform: Ubuntu Xenial (16.04)
+> Platform: "Ubuntu 18.04 LTS"
 
-> MATLAB Release: R2018b
+> Network license manager for MATLAB Release: R2019a
+
+> Region: us-east-1
+
+For other releases or regions, see [Templates for All Supported MATLAB Versions and AWS Regions](#templates-for-all-supported-matlab-versions-and-aws-regions)
 
 This template requires the following additional parameters:
 
@@ -135,6 +143,21 @@ This template requires the following additional parameters:
 
 ### Instances
 * Network license manager instance (AWS::EC2::Instance): An EC2 instance for the license server.
+
+## Templates for All Supported MATLAB Versions and AWS Regions
+
+To deploy a template, select a MATLAB version (e.g., R2019a), the template type (e.g., Network-License-Manager-Template-existing-vpc) and the AWS region into which you will be deploying (e.g., eu-west-1) from the following table. To use an existing VPC, select the template type with the -existing-vpc suffix. Launch the selected template using the launch button.
+
+As of R2019a, this reference architecture supports the eu-west-1 AWS region in addition to us-east-1.
+
+ | Release | Region | Template | Base Operating System | Launch |
+ | ------- | ------ | -------- | --------------------- | ------ |
+ | MATLAB R2019a | us-east-1 | Network-License-Manager-Template | Ubuntu 18.04 LTS | [![alt text](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png "Start a cluster using the template")](https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create/review?templateURL=https://s3.amazonaws.com/network-license-manager-for-matlab-on-aws/Network-License-Manager-Template-R2019a_us-east-1.json) |
+ | MATLAB R2019a | us-east-1 | Network-License-Manager-Template-existing-vpc | Ubuntu 18.04 LTS | [![alt text](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png "Start a cluster using the template")](https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create/review?templateURL=https://s3.amazonaws.com/network-license-manager-for-matlab-on-aws/Network-License-Manager-Template-existing-vpc-R2019a_us-east-1.json) |
+ | MATLAB R2019a | eu-west-1 | Network-License-Manager-Template | Ubuntu 18.04 LTS | [![alt text](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png "Start a cluster using the template")](https://eu-west-1.console.aws.amazon.com/cloudformation/home?region=eu-west-1#/stacks/create/review?templateURL=https://s3.amazonaws.com/network-license-manager-for-matlab-on-aws/Network-License-Manager-Template-R2019a_eu-west-1.json) |
+ | MATLAB R2019a | eu-west-1 | Network-License-Manager-Template-existing-vpc | Ubuntu 18.04 LTS | [![alt text](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png "Start a cluster using the template")](https://eu-west-1.console.aws.amazon.com/cloudformation/home?region=eu-west-1#/stacks/create/review?templateURL=https://s3.amazonaws.com/network-license-manager-for-matlab-on-aws/Network-License-Manager-Template-existing-vpc-R2019a_eu-west-1.json) |
+ | MATLAB R2018b | us-east-1 | Network-License-Manager-Template | Ubuntu 16.04 LTS | [![alt text](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png "Start a cluster using the template")](https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create/review?templateURL=https://s3.amazonaws.com/network-license-manager-for-matlab-on-aws/Network-License-Manager-Template-R2018b_us-east-1.json) |
+ | MATLAB R2018b | us-east-1 | Network-License-Manager-Template-existing-vpc | Ubuntu 16.04 LTS | [![alt text](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png "Start a cluster using the template")](https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create/review?templateURL=https://s3.amazonaws.com/network-license-manager-for-matlab-on-aws/Network-License-Manager-Template-existing-vpc-R2018b_us-east-1.json) |
 
 # Enhancement Request
 Provide suggestions for additional features or capabilities using the following link: [https://www.mathworks.com/cloud/enhancement-request.html](https://www.mathworks.com/cloud/enhancement-request.html)
