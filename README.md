@@ -19,10 +19,11 @@ If you experience problems when deploying a previously downloaded version of thi
 
 # Deployment Steps
 
-The Network License Manager for MATLAB Reference Architecture is released in lockstep with the bi-annual MATLAB releases. Each reference architecture release has its own instructions as we continue to evolve it. Select a release to continue:
+To view instructions for deploying the Network License Manager for MATLAB reference architecture, select a MATLAB release:
 
 | Release |
 | ------- |
+| [R2019b](releases/R2019b/README.md) |
 | [R2019a\_and\_older](releases/R2019a_and_older/README.md) |
 
 
