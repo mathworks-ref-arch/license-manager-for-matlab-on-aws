@@ -62,7 +62,7 @@ You can remove the CloudFormation stack and all associated resources when you ar
 
 1. Select the Stack in the CloudFormation Stacks screen.  Select **Actions/Delete**.
 
-     ![CloudFormation Stacks Output](img/cloudformation-delete-stack.png)
+     ![CloudFormation Stacks Output](../../img/cloudformation-delete-stack.png)
 
 2. Confirm the delete when prompted.  CloudFormation will now delete your resources which can take a few minutes.
 
