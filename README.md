@@ -23,6 +23,7 @@ To view instructions for deploying the Network License Manager for MATLAB refere
 
 | Release |
 | ------- |
+| [R2020a](releases/R2020a/README.md) |
 | [R2019b](releases/R2019b/README.md) |
 | [R2019a\_and\_older](releases/R2019a_and_older/README.md) |
 
@@ -42,8 +43,19 @@ To view instructions for deploying the Network License Manager for MATLAB refere
 ### Instances
 * Network license manager instance (AWS::EC2::Instance): An EC2 instance for the license server.
 
-# Enhancement Request
-Provide suggestions for additional features or capabilities using the following link: [https://www.mathworks.com/cloud/enhancement-request.html](https://www.mathworks.com/cloud/enhancement-request.html)
+## Additional information
+
+### Copy the VM Image to a Different Region
+
+You can copy the AMI for a certain MATLAB version to a target region of your choice.
+
+* In the Releases folder of this repository, choose the MATLAB release that you want to copy. Download and open the CloudFormation template .json file for that release.
+* Locate the Mappings section in the CloudFormation template. Copy the AMI ID for one of the existing regions, for example, us-east-1.
+* To copy the AMI to your target region, follow the instructions at Copying an AMI on the AWS documentation.
+* In the Mappings section of the CloudFormation template, add a new RegionMap pair corresponding to your target region. Insert the new AMI ID of the AMI in the target region.
+* In your AWS Console, change your region to your target region. In the CloudFormation menu, select Create Stack > With new resources option. Provide the modified CloudFormation template.
+
+You can now deploy the AMI in your target region using the AMI that you copied.
 
 # Technical Support
-Email: `cloud-support@mathworks.com`
+https://www.mathworks.com/support/contact_us.html
