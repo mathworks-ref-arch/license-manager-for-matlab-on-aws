@@ -1,4 +1,4 @@
-# Network License Manager for MATLAB on Amazon Web Services
+# Network License Manager for MATLAB on Amazon Web Services (Linux VM)
 
 # Requirements
 
@@ -12,7 +12,7 @@ Before starting, you will need the following:
 You are responsible for the cost of the AWS services used when you create cloud resources using this guide. Resource settings, such as instance type, will affect the cost of deployment. For cost estimates, see the pricing pages for each AWS service you will be using. Prices are subject to change.
 
 # Introduction
-The following guide will help you automate the process of launching a network license manager for MATLAB on Amazon EC2 resources in your AWS account. For information about the architecture of this solution, see [Learn About Network License Manager for MATLAB Architecture](#learn-about-network-license-manager-for-matlab-architecture).
+The following guide will help you automate the process of launching a network license manager for MATLAB, running on a Linux virtual machine, on Amazon EC2 resources in your AWS account. For information about the architecture of this solution, see [Learn About Network License Manager for MATLAB Architecture](#learn-about-network-license-manager-for-matlab-architecture).
 
 ## Note
 If you experience problems when deploying a previously downloaded version of this reference architecture template, try using the latest version from this repository instead.
@@ -23,6 +23,7 @@ To view instructions for deploying the Network License Manager for MATLAB refere
 
 | Release |
 | ------- |
+| [R2020b](releases/R2020b/README.md) |
 | [R2020a](releases/R2020a/README.md) |
 | [R2019b](releases/R2019b/README.md) |
 | [R2019a\_and\_older](releases/R2019a_and_older/README.md) |
@@ -43,10 +44,8 @@ To view instructions for deploying the Network License Manager for MATLAB refere
 ### Instances
 * Network license manager instance (AWS::EC2::Instance): An EC2 instance for the license server.
 
-## Additional information
-
-### Copy the VM Image to a Different Region
-
+## FAQ
+### How do I copy the VM image to a different region?
 You can copy the AMI for a certain MATLAB version to a target region of your choice.
 
 * In the Releases folder of this repository, choose the MATLAB release that you want to copy. Download and open the CloudFormation template .json file for that release.
@@ -58,4 +57,4 @@ You can copy the AMI for a certain MATLAB version to a target region of your cho
 You can now deploy the AMI in your target region using the AMI that you copied.
 
 # Technical Support
-https://www.mathworks.com/support/contact_us.html
+If you require assistance or have a request for additional features or capabilities, please contact [MathWorks Technical Support](https://www.mathworks.com/support/contact_us.html).
