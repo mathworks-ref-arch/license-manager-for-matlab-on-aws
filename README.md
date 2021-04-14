@@ -2,11 +2,13 @@
 
 # Requirements
 
-Before starting, you will need the following:
+Before starting, you will require:
 
 - An Amazon Web Services™ (AWS) account with required permissions. To see what is required, look at the [example policy](example-iam-policy.json).
 
-- An SSH Key Pair for your AWS account in your chosen region (see [Templates for All Supported MATLAB Versions and AWS Regions](#templates-for-all-supported-matlab-versions-and-aws-regions) for supported regions, examples use `us-east-1`). Create an SSH key pair if you do not already have one. For instructions [see the AWS documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html).
+- An SSH Key Pair for your AWS account in your chosen region. Create an SSH key pair if you do not already have one. For instructions [see the AWS documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html).
+
+- To be an administrator of the network license that you want to use.
 
 # Costs
 You are responsible for the cost of the AWS services used when you create cloud resources using this guide. Resource settings, such as instance type, will affect the cost of deployment. For cost estimates, see the pricing pages for each AWS service you will be using. Prices are subject to change.
@@ -23,6 +25,7 @@ To view instructions for deploying the Network License Manager for MATLAB refere
 
 | Release |
 | ------- |
+| [R2021a](releases/R2021a/README.md) |
 | [R2020b](releases/R2020b/README.md) |
 | [R2020a](releases/R2020a/README.md) |
 | [R2019b](releases/R2019b/README.md) |
