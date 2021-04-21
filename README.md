@@ -2,11 +2,13 @@
 
 # Requirements
 
-Before starting, you will require:
+Before starting, you need:
 
 - An Amazon Web Services™ (AWS) account with required permissions. To see what is required, look at the [example policy](example-iam-policy.json).
 
 - An SSH Key Pair for your AWS account in your chosen region. Create an SSH key pair if you do not already have one. For instructions [see the AWS documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html).
+
+- A valid MathWorks™ license. For more information on how to configure your license for cloud use, see [MATLAB Licensing in the Cloud](https://www.mathworks.com/help/licensingoncloud/matlab-on-the-cloud.html).
 
 - To be an administrator of the network license that you want to use.
 
