@@ -156,11 +156,30 @@
               [
                 "#!/bin/bash\n",
                 "# Copyright 2011-2018 The MathWorks, Inc.\n",
-                "echo manager:",
+                "echo \"",
                 {
-                  "Ref": "Password"
+                  "Fn::Join": [
+                    ":",
+                    [
+                      "manager",
+                      {
+                        "Fn::Join": [
+                          "",
+                          [
+                            "$(echo \"",
+                            {
+                              "Fn::Base64": {
+                                "Ref": "Password"
+                              }
+                            },
+                            "\" | base64 -d)"
+                          ]
+                        ]
+                      }
+                    ]
+                  ]
                 },
-                " | chpasswd -c SHA512\n",
+                "\" | sudo chpasswd\n",
                 "/usr/local/bin/create_cert.sh"
               ]
             ]
