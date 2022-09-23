@@ -40,7 +40,7 @@ After you click the Launch Stack button above, the “Create stack” page will 
 | **CIDR IP address range of client** | The IP address range that will be allowed to connect to this server from outside of the VPC. This field should be formatted as \<ip_address>/\<mask>. E.g. 10.0.0.1/32. This is the public IP address which can be found by searching for 'what is my ip address' on the web. The mask determines the number of IP addresses to include. A mask of 32 is a single IP address. This calculator can be used to build a specific range: https://www.ipaddressguide.com/cidr. You may need to contact your IT administrator to determine which address is appropriate. |
 | **Instance type for the network license manager** | The AWS instance type to use to run the Network License Manager for MATLAB. See https://aws.amazon.com/ec2/instance-types for a list of instance types. |
 | **Name of SSH key** | The name of an existing EC2 KeyPair to allow SSH access to all the instances. See https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html for details on creating these. |
-| **InstanceAmiCustom** | Custom Amazon Machine Image (AMI) in the target region |
+| **InstanceAmiCustom** | Custom Amazon Machine Image (AMI) ID in the target region. If provided, the EC2 instance will be created using this AMI. |
 | **Password** | Password for user 'manager'. This is used to login to the Network License Manager for MATLAB dashboard |
 | **Confirm Password** | Confirm Password |
 
