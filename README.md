@@ -4,11 +4,11 @@
 
 Before starting, you need:
 
-- An Amazon Web Services™ (AWS) account with required permissions. To see what is required, look at the [example policy](example-iam-policy.json).
+- An Amazon Web Services&reg; (AWS) account with required permissions. To see what is required, look at the [example policy](example-iam-policy.json).
 
 - An SSH Key Pair for your AWS account in your chosen region. Create an SSH key pair if you do not already have one. For instructions [see the AWS documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html).
 
-- A valid MathWorks™ license. For more information on how to configure your license for cloud use, see [MATLAB Licensing in the Cloud](https://www.mathworks.com/help/licensingoncloud/matlab-on-the-cloud.html).
+- A valid MathWorks&reg; license. For more information on how to configure your license for cloud use, see [MATLAB Licensing in the Cloud](https://www.mathworks.com/help/licensingoncloud/matlab-on-the-cloud.html).
 
 - To be an administrator of the network license that you want to use.
 
@@ -16,7 +16,7 @@ Before starting, you need:
 You are responsible for the cost of the AWS services used when you create cloud resources using this guide. Resource settings, such as instance type, will affect the cost of deployment. For cost estimates, see the pricing pages for each AWS service you will be using. Prices are subject to change.
 
 # Introduction
-The following guide will help you automate the process of launching a network license manager for MATLAB, running on a Linux virtual machine, on Amazon EC2 resources in your AWS account. For information about the architecture of this solution, see [Learn About Network License Manager for MATLAB Architecture](#learn-about-network-license-manager-for-matlab-architecture).
+The following guide will help you automate the process of launching a network license manager for MATLAB&reg;, running on a Linux virtual machine, on Amazon EC2 resources in your AWS account. For information about the architecture of this solution, see [Learn About Network License Manager for MATLAB Architecture](#learn-about-network-license-manager-for-matlab-architecture).
 
 ## Note
 If you experience problems when deploying a previously downloaded version of this reference architecture template, try using the latest version from this repository instead.
@@ -27,6 +27,7 @@ To view instructions for deploying the Network License Manager for MATLAB refere
 
 | Release |
 | ------- |
+| [R2023b](releases/R2023b/README.md) |
 | [R2023a](releases/R2023a/README.md) |
 | [R2022b](releases/R2022b/README.md) |
 | [R2022a](releases/R2022a/README.md) |
@@ -70,6 +71,6 @@ If you require assistance or have a request for additional features or capabilit
 
 ----
 
-Copyright (c) 2020-2023 The MathWorks, Inc. All rights reserved.
+Copyright 2018-2023 The MathWorks, Inc.
 
 ----
