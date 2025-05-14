@@ -11,7 +11,7 @@ You need:
 
 - An SSH key pair for your AWS account in your chosen region. Create an SSH key pair if you do not already have one. For instructions, see the [AWS documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html).
 
-- A valid MATLAB license. For details, see [License Requirements for MATLAB on Cloud Platforms](https://www.mathworks.com/help/licensingoncloud/matlab-on-the-cloud.html).
+- A valid MATLAB license. For details, see [License Requirements for MATLAB on Cloud Platforms](https://www.mathworks.com/help/install/license/licensing-for-mathworks-products-running-on-the-cloud.html).
 
 - Administrator status for the network license you want to use.
 
@@ -23,11 +23,12 @@ You are responsible for the cost of the AWS services used when you create cloud 
 To view instructions for deploying the Network License Manager for MATLAB reference architecture, select a MATLAB release:
 
 > [!IMPORTANT]  
-> MathWorks recommends using the template for the [Latest](releases/v1/latest/README.md) release, which is also compatible with prior releases of MATLAB, MATLAB Parallel Server, and MATLAB Production Server. From June 2025, this will be the only template listed here.
+> MathWorks recommends using the template for the [Latest](releases/v1/latest/README.md) release, which is also compatible with prior releases of MATLAB, MATLAB Parallel Server, and MATLAB Production Server. From May 2025, this will be the only template listed here.
 
 | Release |
-| ------- |
+|---------|
 | [Latest - Network License Manager](releases/v1/latest/README.md) |
+| [R2025a](releases/R2025a/README.md) |
 | [R2024b](releases/R2024b/README.md) |
 | [R2024a](releases/R2024a/README.md) |
 | [R2023b](releases/R2023b/README.md) |
