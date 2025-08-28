@@ -1,4 +1,4 @@
-# Network License Manager for MATLAB on Microsoft Azure
+# Network License Manager for MATLAB on Amazon Web Services
 
 
 > [!IMPORTANT]  
