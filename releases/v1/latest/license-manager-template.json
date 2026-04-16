@@ -3,58 +3,70 @@
   "Mappings": {
     "RegionMap": {
       "us-east-1": {
-        "AMI": "ami-0da8774944d866b04"
+        "AMI": "ami-001f367cff24cac30"
       },
       "us-east-2": {
-        "AMI": "ami-01a7a72deb18d5f59"
+        "AMI": "ami-05dd12c071289369d"
       },
       "us-west-1": {
-        "AMI": "ami-014a21219a5083f27"
+        "AMI": "ami-09b4a23254c1aad2a"
       },
       "us-west-2": {
-        "AMI": "ami-035f6a8771b7ccb7d"
+        "AMI": "ami-0ac0a46e37113066f"
       },
       "ca-central-1": {
-        "AMI": "ami-039106e6579eb8988"
+        "AMI": "ami-02646106d48f437ea"
       },
       "eu-central-1": {
-        "AMI": "ami-0712feb7bd61bb10d"
+        "AMI": "ami-061ae22a71ab80356"
       },
       "eu-west-1": {
-        "AMI": "ami-0983ef31c567bd945"
+        "AMI": "ami-0c36e5a31da5e8158"
       },
       "eu-west-2": {
-        "AMI": "ami-0143b61c395785833"
+        "AMI": "ami-074f85fe5f16daa34"
       },
       "eu-west-3": {
-        "AMI": "ami-073f60fd99aaed128"
+        "AMI": "ami-09c1bd03ccb186222"
       },
       "eu-north-1": {
-        "AMI": "ami-055a3cc26eee3ba57"
+        "AMI": "ami-0197c86e65875dea1"
       },
       "sa-east-1": {
-        "AMI": "ami-00ac6494914cd37e4"
+        "AMI": "ami-0bcd37f99a9437874"
       },
       "me-south-1": {
-        "AMI": "ami-046460affe4cc36c3"
+        "AMI": "Enter the ID of a custom AMI in this region."
       },
       "ap-east-1": {
-        "AMI": "ami-0daa4d4dc67690c2b"
+        "AMI": "ami-06daa9edfd79ac8cd"
       },
       "ap-south-1": {
-        "AMI": "ami-05e2034f75977eafa"
+        "AMI": "ami-04c57691c19faf2a4"
       },
       "ap-northeast-1": {
-        "AMI": "ami-04276933cfb35baf7"
+        "AMI": "ami-09848b79b31b6319c"
       },
       "ap-northeast-2": {
-        "AMI": "ami-0755372c009a8b373"
+        "AMI": "ami-024c8188858df0b3e"
       },
       "ap-southeast-1": {
-        "AMI": "ami-056df5d896eee3e52"
+        "AMI": "ami-0da7477e0ec0ff9d5"
       },
       "ap-southeast-2": {
-        "AMI": "ami-07ce948fe48fa66b2"
+        "AMI": "ami-010d8614e1e25a621"
+      },
+      "us-gov-west-1": {
+        "AMI": "Enter the ID of a custom AMI in this region."
+      },
+      "us-gov-east-1": {
+        "AMI": "Enter the ID of a custom AMI in this region."
+      },
+      "cn-north-1": {
+        "AMI": "Enter the ID of a custom AMI in this region."
+      },
+      "cn-northwest-1": {
+        "AMI": "Enter the ID of a custom AMI in this region."
       }
     }
   },
