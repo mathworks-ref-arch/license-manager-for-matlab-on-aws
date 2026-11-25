@@ -1,31 +1,31 @@
 # Network License Manager for MATLAB on Amazon Web Services (Linux VM)
 
-## Step 1. Launch the Template
+## Step 1: Launch the Template
 
 Click the **Launch Stack** button below to deploy the cloud resources on AWS&reg;. This opens the AWS console in your web browser.
 
 | Region | Launch Link |
 | --------------- | ----------- |
-| **us-east-1** | [![alt text](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png "Start an cluster using the template")](https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create/review?templateURL=https://network-license-manager-for-matlab-on-aws.s3.amazonaws.com/v1/latest/license-manager-template.json) |
-| **us-east-2** | [![alt text](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png "Start an cluster using the template")](https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/create/review?templateURL=https://network-license-manager-for-matlab-on-aws.s3.amazonaws.com/v1/latest/license-manager-template.json) |
-| **us-west-1** | [![alt text](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png "Start an cluster using the template")](https://us-west-1.console.aws.amazon.com/cloudformation/home?region=us-west-1#/stacks/create/review?templateURL=https://network-license-manager-for-matlab-on-aws.s3.amazonaws.com/v1/latest/license-manager-template.json) |
-| **us-west-2** | [![alt text](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png "Start an cluster using the template")](https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/create/review?templateURL=https://network-license-manager-for-matlab-on-aws.s3.amazonaws.com/v1/latest/license-manager-template.json) |
-| **ca-central-1** | [![alt text](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png "Start an cluster using the template")](https://ca-central-1.console.aws.amazon.com/cloudformation/home?region=ca-central-1#/stacks/create/review?templateURL=https://network-license-manager-for-matlab-on-aws.s3.amazonaws.com/v1/latest/license-manager-template.json) |
-| **eu-central-1** | [![alt text](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png "Start an cluster using the template")](https://eu-central-1.console.aws.amazon.com/cloudformation/home?region=eu-central-1#/stacks/create/review?templateURL=https://network-license-manager-for-matlab-on-aws.s3.amazonaws.com/v1/latest/license-manager-template.json) |
-| **eu-west-1** | [![alt text](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png "Start an cluster using the template")](https://eu-west-1.console.aws.amazon.com/cloudformation/home?region=eu-west-1#/stacks/create/review?templateURL=https://network-license-manager-for-matlab-on-aws.s3.amazonaws.com/v1/latest/license-manager-template.json) |
-| **eu-west-2** | [![alt text](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png "Start an cluster using the template")](https://eu-west-2.console.aws.amazon.com/cloudformation/home?region=eu-west-2#/stacks/create/review?templateURL=https://network-license-manager-for-matlab-on-aws.s3.amazonaws.com/v1/latest/license-manager-template.json) |
-| **eu-west-3** | [![alt text](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png "Start an cluster using the template")](https://eu-west-3.console.aws.amazon.com/cloudformation/home?region=eu-west-3#/stacks/create/review?templateURL=https://network-license-manager-for-matlab-on-aws.s3.amazonaws.com/v1/latest/license-manager-template.json) |
-| **eu-north-1** | [![alt text](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png "Start an cluster using the template")](https://eu-north-1.console.aws.amazon.com/cloudformation/home?region=eu-north-1#/stacks/create/review?templateURL=https://network-license-manager-for-matlab-on-aws.s3.amazonaws.com/v1/latest/license-manager-template.json) |
-| **sa-east-1** | [![alt text](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png "Start an cluster using the template")](https://sa-east-1.console.aws.amazon.com/cloudformation/home?region=sa-east-1#/stacks/create/review?templateURL=https://network-license-manager-for-matlab-on-aws.s3.amazonaws.com/v1/latest/license-manager-template.json) |
-| **ap-east-1** | [![alt text](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png "Start an cluster using the template")](https://ap-east-1.console.aws.amazon.com/cloudformation/home?region=ap-east-1#/stacks/create/review?templateURL=https://network-license-manager-for-matlab-on-aws.s3.amazonaws.com/v1/latest/license-manager-template.json) |
-| **ap-south-1** | [![alt text](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png "Start an cluster using the template")](https://ap-south-1.console.aws.amazon.com/cloudformation/home?region=ap-south-1#/stacks/create/review?templateURL=https://network-license-manager-for-matlab-on-aws.s3.amazonaws.com/v1/latest/license-manager-template.json) |
-| **ap-northeast-1** | [![alt text](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png "Start an cluster using the template")](https://ap-northeast-1.console.aws.amazon.com/cloudformation/home?region=ap-northeast-1#/stacks/create/review?templateURL=https://network-license-manager-for-matlab-on-aws.s3.amazonaws.com/v1/latest/license-manager-template.json) |
-| **ap-northeast-2** | [![alt text](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png "Start an cluster using the template")](https://ap-northeast-2.console.aws.amazon.com/cloudformation/home?region=ap-northeast-2#/stacks/create/review?templateURL=https://network-license-manager-for-matlab-on-aws.s3.amazonaws.com/v1/latest/license-manager-template.json) |
-| **ap-southeast-1** | [![alt text](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png "Start an cluster using the template")](https://ap-southeast-1.console.aws.amazon.com/cloudformation/home?region=ap-southeast-1#/stacks/create/review?templateURL=https://network-license-manager-for-matlab-on-aws.s3.amazonaws.com/v1/latest/license-manager-template.json) |
-| **ap-southeast-2** | [![alt text](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png "Start an cluster using the template")](https://ap-southeast-2.console.aws.amazon.com/cloudformation/home?region=ap-southeast-2#/stacks/create/review?templateURL=https://network-license-manager-for-matlab-on-aws.s3.amazonaws.com/v1/latest/license-manager-template.json) |
+| **us-east-1** | [![Launch Stack](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png "Launch the license server using the template")](https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create/review?templateURL=https://network-license-manager-for-matlab-on-aws.s3.amazonaws.com/v1/latest/license-manager-template.json) |
+| **us-east-2** | [![Launch Stack](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png "Launch the license server using the template")](https://us-east-2.console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/create/review?templateURL=https://network-license-manager-for-matlab-on-aws.s3.amazonaws.com/v1/latest/license-manager-template.json) |
+| **us-west-1** | [![Launch Stack](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png "Launch the license server using the template")](https://us-west-1.console.aws.amazon.com/cloudformation/home?region=us-west-1#/stacks/create/review?templateURL=https://network-license-manager-for-matlab-on-aws.s3.amazonaws.com/v1/latest/license-manager-template.json) |
+| **us-west-2** | [![Launch Stack](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png "Launch the license server using the template")](https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/create/review?templateURL=https://network-license-manager-for-matlab-on-aws.s3.amazonaws.com/v1/latest/license-manager-template.json) |
+| **ca-central-1** | [![Launch Stack](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png "Launch the license server using the template")](https://ca-central-1.console.aws.amazon.com/cloudformation/home?region=ca-central-1#/stacks/create/review?templateURL=https://network-license-manager-for-matlab-on-aws.s3.amazonaws.com/v1/latest/license-manager-template.json) |
+| **eu-central-1** | [![Launch Stack](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png "Launch the license server using the template")](https://eu-central-1.console.aws.amazon.com/cloudformation/home?region=eu-central-1#/stacks/create/review?templateURL=https://network-license-manager-for-matlab-on-aws.s3.amazonaws.com/v1/latest/license-manager-template.json) |
+| **eu-west-1** | [![Launch Stack](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png "Launch the license server using the template")](https://eu-west-1.console.aws.amazon.com/cloudformation/home?region=eu-west-1#/stacks/create/review?templateURL=https://network-license-manager-for-matlab-on-aws.s3.amazonaws.com/v1/latest/license-manager-template.json) |
+| **eu-west-2** | [![Launch Stack](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png "Launch the license server using the template")](https://eu-west-2.console.aws.amazon.com/cloudformation/home?region=eu-west-2#/stacks/create/review?templateURL=https://network-license-manager-for-matlab-on-aws.s3.amazonaws.com/v1/latest/license-manager-template.json) |
+| **eu-west-3** | [![Launch Stack](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png "Launch the license server using the template")](https://eu-west-3.console.aws.amazon.com/cloudformation/home?region=eu-west-3#/stacks/create/review?templateURL=https://network-license-manager-for-matlab-on-aws.s3.amazonaws.com/v1/latest/license-manager-template.json) |
+| **eu-north-1** | [![Launch Stack](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png "Launch the license server using the template")](https://eu-north-1.console.aws.amazon.com/cloudformation/home?region=eu-north-1#/stacks/create/review?templateURL=https://network-license-manager-for-matlab-on-aws.s3.amazonaws.com/v1/latest/license-manager-template.json) |
+| **sa-east-1** | [![Launch Stack](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png "Launch the license server using the template")](https://sa-east-1.console.aws.amazon.com/cloudformation/home?region=sa-east-1#/stacks/create/review?templateURL=https://network-license-manager-for-matlab-on-aws.s3.amazonaws.com/v1/latest/license-manager-template.json) |
+| **ap-east-1** | [![Launch Stack](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png "Launch the license server using the template")](https://ap-east-1.console.aws.amazon.com/cloudformation/home?region=ap-east-1#/stacks/create/review?templateURL=https://network-license-manager-for-matlab-on-aws.s3.amazonaws.com/v1/latest/license-manager-template.json) |
+| **ap-south-1** | [![Launch Stack](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png "Launch the license server using the template")](https://ap-south-1.console.aws.amazon.com/cloudformation/home?region=ap-south-1#/stacks/create/review?templateURL=https://network-license-manager-for-matlab-on-aws.s3.amazonaws.com/v1/latest/license-manager-template.json) |
+| **ap-northeast-1** | [![Launch Stack](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png "Launch the license server using the template")](https://ap-northeast-1.console.aws.amazon.com/cloudformation/home?region=ap-northeast-1#/stacks/create/review?templateURL=https://network-license-manager-for-matlab-on-aws.s3.amazonaws.com/v1/latest/license-manager-template.json) |
+| **ap-northeast-2** | [![Launch Stack](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png "Launch the license server using the template")](https://ap-northeast-2.console.aws.amazon.com/cloudformation/home?region=ap-northeast-2#/stacks/create/review?templateURL=https://network-license-manager-for-matlab-on-aws.s3.amazonaws.com/v1/latest/license-manager-template.json) |
+| **ap-southeast-1** | [![Launch Stack](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png "Launch the license server using the template")](https://ap-southeast-1.console.aws.amazon.com/cloudformation/home?region=ap-southeast-1#/stacks/create/review?templateURL=https://network-license-manager-for-matlab-on-aws.s3.amazonaws.com/v1/latest/license-manager-template.json) |
+| **ap-southeast-2** | [![Launch Stack](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png "Launch the license server using the template")](https://ap-southeast-2.console.aws.amazon.com/cloudformation/home?region=ap-southeast-2#/stacks/create/review?templateURL=https://network-license-manager-for-matlab-on-aws.s3.amazonaws.com/v1/latest/license-manager-template.json) |
 
 
-## Step 2. Configure the Cloud Resources
+## Step 2: Configure the Cloud Resources
 After you click the Launch Stack button above, the “Create stack” page will open in your browser where you can configure the parameters. It is easier to complete the steps if you position these instructions and the AWS console window side by side.
 
 1. Specify a stack name. This will be shown in the AWS CloudFormation console and must be unique within the AWS account.
@@ -52,24 +52,24 @@ After you click the Launch Stack button above, the “Create stack” page will 
 
 Click Create to create the license server using AWS CloudFormation templates.
 
-# Step 3: Connect to the Dashboard
+## Step 3: Connect to the Dashboard
 > **Note**: The Internet Explorer web browser is not supported for interacting with the cloud console.
 
 1. In the Stack Detail for your stack, expand the **Outputs** section.
 2. Look for the key named `ServerAddress` and click the corresponding URL listed under value. This is the HTTPS endpoint to the network license manager for MATLAB&reg; Dashboard.
 
-# Step 4: Log in to the Dashboard
+## Step 4: Log in to the Dashboard
 
 1. Enter the username `manager` along with the password for this user you created in Step 2.
 
 > **Note**: The dashboard uses a self-signed certificate which can be changed. For information on changing the self-signed certificates, see [Change Self-signed Certificate](#change-self-signed-certificate).
 
-# Step 5: Upload the License File
+## Step 5: Upload the License File
 > **Note**: You will need the fixed MAC address created in the CloudFormation Stack to get a license file from the MathWorks&reg; License Center for your product. For more information see the documentation for your product.
 
 1. In the cloud console, go to **Administration > Manage License**.
-2. Click **Browse License File** to select the license file you want to upload and click **Open**.
-3. Click **Upload**.
+2. Click **Browse**, select the license file you want to upload, and click **Open**.
+3. Click **Upload License File**.
 
 You are now ready to use the network license manager on AWS.
 
@@ -78,6 +78,17 @@ To configure your MATLAB products deployed in AWS to use the network license man
 # Additional Information
 ## No Public IP Address
 If you require a private networking configuration, you have the option to not assign a public IP to the license server using the `EnablePublicIPAddress` parameter. Ensure that the IP address range of the jumpbox or any client that will access the License Manager instance and its dashboard is specified in the `ClientIPAddress` parameter.
+
+## Update Network License Manager
+To update the network license manager to a newer template, update the stack instead of deleting it and creating a new one. The IP address of your license server stays the same, so you do not need to reconfigure MATLAB clients. The update replaces the license server, so you do need a new license file. Any changes made on the server are not kept.
+
+1. In the CloudFormation console, on the **Stacks** page, select your stack and select **Update stack** > **Make a direct update**.
+2. Select **Replace existing template** and **Amazon S3 URL**, and enter the URL of the latest template:
+
+    `https://network-license-manager-for-matlab-on-aws.s3.amazonaws.com/v1/latest/license-manager-template.json`
+
+3. Select **Next**, keep the existing parameter values (see [Step 2](#step-2-configure-the-cloud-resources)), and complete the update. For more information, see [Update stacks directly](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-direct.html) in the AWS CloudFormation documentation.
+4. When the update completes, follow [Step 3](#step-3-connect-to-the-dashboard) to [Step 5](#step-5-upload-the-license-file) to connect to the dashboard, log in, and upload a new license file.
 
 ## Delete Your Cloud Resources
 You can remove the CloudFormation stack and all associated resources when you are done with them. Note that you cannot recover resources once they are deleted. After you delete the cloud resources you cannot use the downloaded profile again.
@@ -91,9 +102,9 @@ You can remove the CloudFormation stack and all associated resources when you ar
 ## Change Self-signed Certificate
 You can change the self-signed certificate used to connect to the dashboard. To upload an HTTPS certificate:
 1. On the dashboard navigation menu, select **Administration** > **Manage HTTPS Certificate**.
-1. Click **Browse Certificate...** and select a certificate file. Only `.pfx` files are supported.
+1. Click **Browse** and select a certificate file. Only `.pfx` files are supported.
 1. Enter the certificate password in the **Certificate Password** field.
-1. Click **Upload**.
+1. Click **Upload Certificate**.
 
 The server automatically restarts after a certificate is uploaded. After the restart, sign out and sign back in. If the license file was uploaded before the self-signed certificate, upload the license file again.
 
@@ -112,6 +123,6 @@ The logs are output to /var/log on the instance nodes; the files of interest are
 
 ----
 
-Copyright 2018-2025 The MathWorks, Inc.
+Copyright 2018-2026 The MathWorks, Inc.
 
 ----

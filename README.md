@@ -31,11 +31,11 @@ To view instructions for deploying the Network License Manager for MATLAB refere
 
 ## Learn about Architecture
 
-![Cluster Architecture](img/network-license-manager-architecture.png?raw=true)
+![Network License Manager Architecture](img/network-license-manager-architecture.png?raw=true)
 
 ### Networking Resources
 * Security Group (AWS::EC2::SecurityGroup): The security group defines the ports that are opened to the instance:
-  * 22: Required for SSH access to the cluster nodes.
+  * 22: Required for SSH access to the license server.
   * 443: Required for HTTPS access to the dashboard.
   * 27000-27010: Required for communication from MATLAB and MATLAB workers to the network license manager for MATLAB.
 * Internal Security Group Traffic Rule (AWS::EC2::SecurityGroupIngress): Opens access to network traffic between all instances internally.
